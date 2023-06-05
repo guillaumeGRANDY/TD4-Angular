@@ -1,0 +1,13 @@
+
+
+<div style="display: grid; grid-template-columns: repeat(5,1fr); width: 100%; text-align: center; align-items: center; margin: 15px; width: calc(100% - 30px)" matTooltip="{{Passenger.email}}">
+  <img src="{{Passenger.image}}" sttle="width:100%" *ngIf="isChecked" style="grid-column:1/2">
+  <mat-slide-toggle [checked]="false" (change)="isChecked = !isChecked" style="grid-column:2/3">Show Photo</mat-slide-toggle>
+  <p style="grid-column:3/4">{{Passenger.nom}}</p>
+  <p [appPassengerClasse]="Passenger.classeVol" style="grid-column:4/5">{{Passenger.classeVol}}</p>
+  <div [appPassengerLuggage]="Passenger" style="display:flex; flex-direction: row; justify-content: center; grid-column:5/6 ">
+    <mat-icon style="text-align: right">work</mat-icon>
+    <p style="text-align: left">X{{Passenger.nbBagagesSoute}}</p>
+  </div>
+</div>
+

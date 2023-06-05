@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="title"><h1 *ngIf="type=='decollages'">DECOLLAGES</h1><h1 *ngIf="type=='atterrissages'">ATTERISSAGES</h1></div>
+  <div class="sections">
+    <div class="left">
+      <div class="top">
+        <app-filtres (filtreSender)="onFiltresEvent($event)" ></app-filtres>
+      </div>
+      <div class="bottom">
+        <app-liste-vols [vols]="vols" [isTakeOff]="type =='decollages'" (selectedFlightEvenement)="onFilghtClick($event)"></app-liste-vols>
+      </div>
+    </div>
+    <div class="right">
+      <app-liste-passagers *ngIf="passagers" [listPassengers]="passagers"></app-liste-passagers>
+    </div>
+  </div>
+</div>

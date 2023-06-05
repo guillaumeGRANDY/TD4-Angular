@@ -1,0 +1,16 @@
+<!-- Affichage d'un vol -->
+<div style="display: grid; grid-template-columns: 24px repeat(3,1fr) 24px 1fr 2fr; width: 100%; text-align: center; align-items: center; maring:auto;">
+  <div class="icon">
+    <mat-icon>{{isTakeOff ? 'flight_takeoff' : 'flight_land'}}</mat-icon>
+  </div>
+  <p>{{vol.icao}}</p>
+  <p>{{vol.matricule}}</p>
+  <p>{{vol.aeroportDepart}}</p>
+  <div class="icon">
+    <mat-icon>arrow_right_alt</mat-icon>
+  </div>
+  <p>{{vol.aeroportArrivee}}</p>
+  <div style="display: flex; justify-content: center;">
+    <img src="{{'assets/' + vol.compagnie + '.png'}}" style="height:24px; align-self: center">
+  </div>
+</div>
